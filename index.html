@@ -1,175 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy International Day of Peace</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#1e88e5,#43a047);
-color:white;
-text-align:center;
-}
-
-.container{
-padding:30px;
-max-width:600px;
-margin:auto;
-}
-
-h1{
-font-size:40px;
-}
-
-  input{
-width:90%;
-padding:15px;
-font-size:20px;
-border-radius:10px;
-border:none;
-margin-top:20px;
-}
-
-button{
-margin-top:20px;
-padding:15px 35px;
-font-size:22px;
-border:none;
-border-radius:30px;
-background:#ff9800;
-color:white;
-cursor:pointer;
-}
-
-button:hover{
-background:#f57c00;
-}
-
-#wish{
-display:none;
-margin-top:30px;
-font-size:24px;
-background:white;
-color:#333;
-padding:20px;
-border-radius:15px;
-}
-
-.share{
-margin-top:30px;
-}
-
-.share a{
-display:inline-block;
-padding:12px 25px;
-background:#25D366;
-color:white;
-text-decoration:none;
-border-radius:25px;
-font-size:20px;
-}
-
-.footer{
-margin-top:40px;
-font-size:16px;
-opacity:0.8;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Peace Day Wishes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1d976c, #93f9b9);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 450px;
+            margin: auto;
+            padding: 20px;
+        }
+        /* Countdown styling */
+        #countdown {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 15px;
+            display: none;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        button {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #e68900;
+        }
+        .share-buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .share-btn {
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .whatsapp { background: #25D366; }
+        .tiktok { background: #000000; }
+    </style>
 </head>
-
 <body>
 
 <div class="container">
+    <!-- Countdown Timer at the top -->
+    <div id="countdown">Loading Countdown...</div>
 
-<h1>🕊 Happy International Day of Peace</h1>
+    <h1>🕊️ Happy International Day of Peace</h1>
+    <p>May peace, happiness and success always stay with you.</p>
 
-<p>May peace, happiness and success always stay with you.</p>
+    <input type="text" id="name" placeholder="Enter Your Name">
+    <br>
+    <button onclick="wish()">🎁 Show My Wishes</button>
 
-<input
-type="text"
-id="name"
-placeholder="Enter Your Name">
+    <div id="wish" class="card">
+        <h2 id="displayName"></h2>
+        <p>🕊️ Wishing you a joyful International Day of Peace!</p>
+        <p>❤️ May your life be filled with Love.</p>
+        <p>😊 Happiness.<br>🌈 Hope.<br>🤝 Friendship.<br>☮️ Peace.</p>
+        <h3 id="subText">Have a wonderful day!</h3>
 
-<br>
+        <!-- Multi-platform Share buttons -->
+        <div class="share-buttons">
+            <a id="wa" class="share-btn whatsapp" target="_blank">Share on WhatsApp</a>
+            <a id="tk" class="share-btn tiktok" href="#" onclick="shareTiktok(event)">Share via TikTok</a>
+        </div>
+    </div>
 
-<button onclick="wish()">🎁 Show My Wishes</button>
+    <!-- Adsterra Banner -->
+    <div style="margin-top:25px;">
+        <!-- Your banner script can remain here -->
+    </div>
 
-<div id="wish"></div>
+    <!-- Adsterra Social Bar -->
+    <div style="margin-top:30px;">
+        <script src="https://pl30721427.effectivecpmnetwork.com/dd/e7/2e/ddu72e7baa830116a820245530db3164.js"></script>
+    </div>
 
-<!-- Adsterra Banner -->
-<div style="margin-top:25px;">
-
-</div>
-
-<div class="share">
-
-<a id="wa" target="_blank">
-Share on WhatsApp
-</a>
-
-</div>
-
-<!-- Adsterra Social Bar -->
-<div style="margin-top:30px;">
-<script src="https://pl30721427.effectivecpmnetwork.com/dd/e7/2e/dde72e7baa830116a820245539db3164.js"></script>
-
-</div>
-
-<div class="footer">
-
-Made with ❤️
-
-Happy International Day of Peace
-
-</div>
-
+    <div class="footer" style="margin-top: 20px; font-size: 13px; color: #fff;">
+        Made with ❤️<br>
+        Happy International Day of Peace
+    </div>
 </div>
 
 <script>
+    // Live Countdown Logic to September 21
+    function updateCountdown() {
+        const now = new Date();
+        let year = now.getFullYear();
+        let peaceDay = new Date(`September 21, ${year} 00:00:00`);
+        
+        if (now > peaceDay) {
+            peaceDay = new Date(`September 21, ${year + 1} 00:00:00`);
+        }
+        
+        const diff = peaceDay - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / 1000 / 60) % 60);
+        
+        document.getElementById("countdown").innerHTML = 
+            `⏳ Countdown to Peace Day: ${days}d ${hours}h ${minutes}m left`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 
-function wish(){
+    // Wish generator & custom share text updater
+    function wish() {
+        var n = document.getElementById("name").value.trim();
+        if(n === ""){
+            alert("Please enter your name.");
+            return;
+        }
 
-var n=document.getElementById("name").value;
+        document.getElementById("wish").style.display = "block";
+        document.getElementById("displayName").innerHTML = "🌸 Dear " + n;
 
-if(n==""){
-alert("Please enter your name.");
-return;
-}
+        // Build share message with name and site link
+        var siteUrl = window.location.href.split('?')[0];
+        var shareText = "Check out this International Peace Day card created by " + n + "! Open it here: " + siteUrl;
 
-document.getElementById("wish").style.display="block";
+        // Update WhatsApp link
+        document.getElementById("wa").href = "https://api.whatsapp.com/send?text=" + encodeURIComponent(shareText);
+        
+        // Save shareText globally for TikTok handler
+        window.currentShareText = shareText;
+    }
 
-document.getElementById("wish").innerHTML=
-
-"<h2>🌸 Dear "+n+"</h2>"+
-
-"<p>🕊 Wishing you a joyful International Day of Peace!</p>"+
-
-"<p>❤️ May your life be filled with Love.</p>"+
-
-"<p>😊 Happiness.</p>"+
-
-"<p>🌈 Hope.</p>"+
-
-"<p>🤝 Friendship.</p>"+
-
-"<p>☮ Peace.</p>"+
-
-"<h3>Have a wonderful day!</h3>";
-
-var text="Happy International Day of Peace! Visit this page and get your personalized wishes.";
-
-document.getElementById("wa").href="https://wa.me/?text="+encodeURIComponent(text+" "+window.location.href);
-
-}
-
+    // TikTok custom share handler (copies text to clipboard for easy pasting on TikTok)
+    function shareTiktok(e) {
+        e.preventDefault();
+        if(!window.currentShareText) {
+            alert("Please click 'Show My Wishes' first!");
+            return;
+        }
+        navigator.clipboard.writeText(window.currentShareText).then(function() {
+            alert("Link and message copied! You can now paste it directly into TikTok.");
+        }, function() {
+            alert("Could not copy automatically. Please copy the URL from your browser address bar.");
+        });
+    }
 </script>
-<script src="https://pl30721426.effectivecpmnetwork.com/44/f9/58/44f9583fcc10d39ba2841e7cf2eda7ba.js"></script>
 
 </body>
 </html>
