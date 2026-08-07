@@ -18,16 +18,6 @@
             margin: auto;
             padding: 20px;
         }
-        /* Countdown styling */
-        #countdown {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-        }
         .card {
             background: #fff;
             padding: 20px;
@@ -57,30 +47,21 @@
         button:hover {
             background: #e68900;
         }
-        .share-buttons {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
         .share-btn {
-            padding: 10px 15px;
+            background: #25D366;
             color: white;
+            padding: 10px 15px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 14px;
+            display: inline-block;
+            margin-top: 15px;
         }
-        .whatsapp { background: #25D366; }
-        .tiktok { background: #000000; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Countdown Timer at the top -->
-    <div id="countdown">Loading Countdown...</div>
-
     <h1>🕊️ Happy International Day of Peace</h1>
     <p>May peace, happiness and success always stay with you.</p>
 
@@ -92,19 +73,20 @@
         <h2 id="displayName"></h2>
         <p>🕊️ Wishing you a joyful International Day of Peace!</p>
         <p>❤️ May your life be filled with Love.</p>
-        <p>😊 Happiness.<br>🌈 Hope.<br>🤝 Friendship.<br>☮️ Peace.</p>
+        <p>😊 Happiness.</p>
+        <p>🌈 Hope.</p>
+        <p>🤝 Friendship.</p>
+        <p>☮️ Peace.</p>
         <h3 id="subText">Have a wonderful day!</h3>
 
-        <!-- Multi-platform Share buttons -->
-        <div class="share-buttons">
-            <a id="wa" class="share-btn whatsapp" target="_blank">Share on WhatsApp</a>
-            <a id="tk" class="share-btn tiktok" href="#" onclick="shareTiktok(event)">Share via TikTok</a>
+        <div class="share">
+            <a id="wa" class="share-btn" target="_blank">Share on WhatsApp</a>
         </div>
     </div>
 
     <!-- Adsterra Banner -->
     <div style="margin-top:25px;">
-        <!-- Your banner script can remain here -->
+        <!-- Banner script placeholder -->
     </div>
 
     <!-- Adsterra Social Bar -->
@@ -119,64 +101,23 @@
 </div>
 
 <script>
-    // Live Countdown Logic to September 21
-    function updateCountdown() {
-        const now = new Date();
-        let year = now.getFullYear();
-        let peaceDay = new Date(`September 21, ${year} 00:00:00`);
-        
-        if (now > peaceDay) {
-            peaceDay = new Date(`September 21, ${year + 1} 00:00:00`);
-        }
-        
-        const diff = peaceDay - now;
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / 1000 / 60) % 60);
-        
-        document.getElementById("countdown").innerHTML = 
-            `⏳ Countdown to Peace Day: ${days}d ${hours}h ${minutes}m left`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+function wish(){
+    var n = document.getElementById("name").value;
 
-    // Wish generator & custom share text updater
-    function wish() {
-        var n = document.getElementById("name").value.trim();
-        if(n === ""){
-            alert("Please enter your name.");
-            return;
-        }
-
-        document.getElementById("wish").style.display = "block";
-        document.getElementById("displayName").innerHTML = "🌸 Dear " + n;
-
-        // Build share message with name and site link
-        var siteUrl = window.location.href.split('?')[0];
-        var shareText = "Check out this International Peace Day card created by " + n + "! Open it here: " + siteUrl;
-
-        // Update WhatsApp link
-        document.getElementById("wa").href = "https://api.whatsapp.com/send?text=" + encodeURIComponent(shareText);
-        
-        // Save shareText globally for TikTok handler
-        window.currentShareText = shareText;
+    if(n === ""){
+        alert("Please enter your name.");
+        return;
     }
 
-    // TikTok custom share handler (copies text to clipboard for easy pasting on TikTok)
-    function shareTiktok(e) {
-        e.preventDefault();
-        if(!window.currentShareText) {
-            alert("Please click 'Show My Wishes' first!");
-            return;
-        }
-        navigator.clipboard.writeText(window.currentShareText).then(function() {
-            alert("Link and message copied! You can now paste it directly into TikTok.");
-        }, function() {
-            alert("Could not copy automatically. Please copy the URL from your browser address bar.");
-        });
-    }
-</script>
-<script src="https://pl30721426.effectivecpmnetwork.com/44/f9/58/44f9583fcc10d39ba2841e7cf2eda7ba.js"></script>
+    document.getElementById("wish").style.display = "block";
+    document.getElementById("displayName").innerHTML = "🌸 Dear " + n;
     
+    var siteUrl = window.location.href.split('?')[0];
+    var shareText = "Check out this International Peace Day card created by " + n + "! Open it here: " + siteUrl;
+    
+    document.getElementById("wa").href = "https://api.whatsapp.com/send?text=" + encodeURIComponent(shareText);
+}
+</script>
+
 </body>
 </html>
